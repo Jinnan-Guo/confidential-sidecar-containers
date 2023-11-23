@@ -25,7 +25,7 @@ popd
 cp ../../tools/get-snp-report/bin/get-snp-report ./bin
 cp ../../tools/get-snp-report/bin/get-fake-snp-report ./bin
 
-docker build --tag ${IMAGEREGISTRY}/dm-verity-encfs -f Dockerfile.encfs .
+docker build --tag ${IMAGEREGISTRY}/dm-verity-encfs-bm:2.0 -f Dockerfile.encfs .
 
 # clean up
 rm -rf bin

@@ -60,6 +60,11 @@ func main() {
 
 	flag.Parse()
 
+    logrus.SetFormatter(&logrus.TextFormatter{
+        TimestampFormat: "2006-01-02 15:04:05.000",
+        FullTimestamp:   true,
+    })
+
 	if *logFile != "" {
 		// If the file doesn't exist, create it. If it exists, append to it.
 		file, err := os.OpenFile(*logFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
@@ -117,5 +122,6 @@ func main() {
 		logrus.Fatalf("Failed to mount filesystems: %s", err.Error())
 	}
 
+	logrus.Infof("End ENCFS Task")
 	os.Exit(0)
 }

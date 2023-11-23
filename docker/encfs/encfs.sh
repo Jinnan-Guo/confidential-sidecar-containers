@@ -12,13 +12,13 @@ fi
 echo EncfsSideCarArgs = $EncfsSideCarArgs
 
 if [[ -z "${EncfsSideCarArgs}" ]]; then
-  if /bin/remotefs -logfile /log.txt; then
+  if /bin/remotefs -loglevel info -logfile /log.txt; then
     echo "1" > result
   else
     echo "0" > result
   fi
 else
-  if /bin/remotefs -logfile /log.txt -base64 $EncfsSideCarArgs; then
+  if /bin/remotefs -loglevel info -logfile /log.txt -base64 $EncfsSideCarArgs; then
     echo "1" > result
   else
     echo "0" > result
