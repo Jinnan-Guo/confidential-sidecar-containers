@@ -10,11 +10,11 @@ set -e
 mkdir -p bin
 pushd bin
 echo building skr
-CGO_ENABLED=0 GOOS=linux go build ${PWD}/cmd/skr
+CGO_ENABLED=0 GOOS=linux go build ${PWD}/../cmd/skr
 echo building azmount
-CGO_ENABLED=0 GOOS=linux go build ${PWD}/cmd/azmount
+CGO_ENABLED=0 GOOS=linux go build ${PWD}/../cmd/azmount
 echo building remotefs
-CGO_ENABLED=0 GOOS=linux go build ${PWD}/cmd/remotefs
+CGO_ENABLED=0 GOOS=linux go build ${PWD}/../cmd/remotefs
 popd
 
 echo building get-snp-report
